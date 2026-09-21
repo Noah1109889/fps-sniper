@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#060914" />
+  <title>NEON SNIPE // FPS RANGE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◎</span><div><strong>NEON SNIPE</strong><small>PRECISION OPERATIONS</small></div></div>
+      <div class="status"><span class="live-dot"></span> RANGE ONLINE <span class="divider"></span><span id="scoreLabel">SCORE 000000</span></div>
+      <button id="soundToggle" class="icon-button" aria-label="Toggle sound">♪</button>
+    </header>
+
+    <section class="game-layout">
+      <aside class="loadout-panel panel">
+        <div class="panel-heading"><span>01 / LOADOUT</span><i>ARMORY</i></div>
+        <div class="weapon-card" id="weaponCard"><div class="weapon-glow"></div><div class="weapon-art"><span>◒</span></div><div class="weapon-meta"><h2>VX-9 // NIGHTFALL</h2><p>PRECISION BOLT ACTION</p></div><div class="stat-grid"><div><b>92</b><small>POWER</small></div><div><b>76</b><small>STABILITY</small></div><div><b>61</b><small>HANDLING</small></div></div></div>
+        <label class="field-label" for="tuneSelect">TUNE PROFILE</label>
+        <select id="tuneSelect" class="select-control"><option value="precision">PRECISION // +CRIT</option><option value="rapid">RAPID CYCLE // +SPEED</option><option value="steady">STEADY HAND // +FOCUS</option><option value="overdrive">OVERDRIVE // +MULTIPLIER</option></select>
+        <label class="field-label" for="camoSelect">CAMO FINISH</label>
+        <select id="camoSelect" class="select-control"></select>
+        <div class="camo-preview" id="camoPreview"><span></span><div><b id="camoName">PRISMATIC VORTEX</b><small id="camoRarity">MYTHIC • ANIMATED</small></div></div>
+        <div class="challenge"><div><small>DAILY CONTRACT</small><b>LAND 3 PERFECT SHOTS</b></div><strong id="contractProgress">0/3</strong></div>
+      </aside>
+
+      <section class="range-panel">
+        <div class="range-toolbar"><div><span class="eyebrow">MISSION 07 // DUSK CIRCUIT</span><h1>THE LONG SHOT</h1></div><div class="round-info"><span>ROUND</span><b id="roundLabel">01 / 05</b></div></div>
+        <div class="range-wrap" id="rangeWrap">
+          <canvas id="rangeCanvas" aria-label="Interactive sniper range"></canvas>
+          <div class="reticle" id="reticle"><span></span><i></i></div>
+          <div class="scope-vignette"></div>
+          <div class="range-hud"><span>WIND <b id="windLabel">→ 04</b></span><span>ZOOM <b id="zoomLabel">4.0x</b></span><span>AMMO <b id="ammoLabel">05</b></span></div>
+          <div class="toast" id="toast">CLICK THE RANGE TO ACQUIRE TARGETS</div>
+          <button id="startButton" class="start-button">START MISSION <span>→</span></button>
+        </div>
+        <div class="controls"><span><kbd>CLICK</kbd> FIRE</span><span><kbd>WHEEL</kbd> ZOOM</span><span><kbd>R</kbd> RELOAD</span><span><kbd>ESC</kbd> ABORT</span><div class="accuracy"><small>ACCURACY</small><div class="accuracy-bar"><i id="accuracyBar"></i></div><b id="accuracyLabel">100%</b></div></div>
+      </section>
+
+      <aside class="intel-panel panel"><div class="panel-heading"><span>02 / INTEL</span><i>LIVE FEED</i></div><div class="intel-score"><small>TOTAL SCORE</small><strong id="bigScore">000000</strong><span id="comboLabel">NO COMBO</span></div><div class="feed" id="feed"><div class="feed-line"><span class="feed-time">NOW</span><p>Awaiting operator input...</p></div></div><div class="rarity-key"><small>CAMO RARITY</small><div><span class="dot common"></span>COMMON</div><div><span class="dot rare"></span>RARE</div><div><span class="dot epic"></span>EPIC</div><div><span class="dot mythic"></span>MYTHIC</div></div></aside>
+    </section>
+    <footer><span>NEON SNIPE OS v2.7.1</span><span>© 2088 // ALL SYSTEMS NOMINAL</span><span>FPS TRAINING SIMULATION</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
